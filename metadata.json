@@ -1,0 +1,6 @@
+{
+  "name": "Fraction Line Lab",
+  "description": "An interactive learning lab for upper-primary learners to place unit and non-unit fractions on a number line by partitioning the whole into equal intervals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
