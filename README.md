@@ -35,6 +35,7 @@ The learner's input must change what happens next. The finished activity must be
 | [`docs/idea-exploration.md`](docs/idea-exploration.md) | Three candidate activities and the criteria used to compare them |
 | [`docs/decisions.md`](docs/decisions.md) | Human-owned product and engineering decisions, including rejected options |
 | [`docs/implementation-plan.md`](docs/implementation-plan.md) | Bounded path from approved concept to verified PoC |
+| [`docs/technical-note.md`](docs/technical-note.md) | One-page technical note: source, what was built, AI use, one rejection, next step |
 | [`docs/ai-log/`](docs/ai-log/README.md) | Indexed, one-file-per-prompt record of meaningful AI collaboration |
 
 ## Working approach

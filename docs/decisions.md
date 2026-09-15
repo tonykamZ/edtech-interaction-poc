@@ -59,6 +59,16 @@ Each new decision should include:
 - **Evidence gap:** These sources support the design rationale, but they do not prove this PoC is effective. Usability observations can show whether the loop works as intended; a learning-effect claim would require a more suitable evaluation.
 - **Consequences:** Feedback must diagnose the learner's step rather than only mark an answer right or wrong. The first build needs no runtime AI.
 
+## D-006 — Technology stack and dependency clean-up
+
+- **Status:** Accepted
+- **Context:** The initial build was generated from a Google AI Studio starter template. The template included dependencies (`@google/genai`, `express`, `dotenv`, `@types/express`) that were not used by the implemented code.
+- **Decision:** Adopt the React 19 + Vite 6 + TypeScript stack that the generated code uses. Remove the four unused starter-template dependencies from `package.json`.
+- **Reasoning:** The implemented code requires only React, Vite, TypeScript, Tailwind CSS v4, `lucide-react`, and `motion`. Keeping unused packages adds installation cost and creates a misleading implication that a backend or Gemini API integration is part of the PoC.
+- **Rejected alternatives:** Keeping the unused packages was rejected because it would misrepresent the architecture in a public repository.
+- **Consequences:** The app remains fully local and static. No backend, no Gemini API calls, no server process. Any future decision to add a backend or model call requires a new decision record and human approval.
+- **Evidence:** Human-verified browser run (2026-09-15) confirmed the app works without any of the removed packages.
+
 ## Commit and release gate
 
 The current documentation changes must be reviewed by the human owner before any commit. A later commit, if approved, must use the requested `tonykamZ` Git identity. Commit, push, deployment, and release remain separate human-authorized actions.

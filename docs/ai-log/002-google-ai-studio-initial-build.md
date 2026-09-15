@@ -9,7 +9,7 @@ Generate the smallest accessible web version of Fraction Line Lab that demonstra
 - **Date:** 2026-09-15
 - **Stage:** Initial implementation
 - **Target tool:** Google AI Studio
-- **Status:** Build generated; awaiting human browser verification.
+- **Status:** Verified by human browser run (2026-09-15). All acceptance-criteria paths passed.
 
 ## Prompt
 
@@ -66,18 +66,18 @@ No AI output should be accepted as evidence until these paths are observed in a 
 
 ## Decision or change
 
-Pending human browser verification. If the happy path and both error paths are confirmed, the build satisfies the Phase 4 gate in `docs/implementation-plan.md` and the project moves to Phase 5 (review and verify). Any failed criterion requires a revision before that gate is passed.
+**Accepted.** The human owner confirmed all seven paths in a browser run on 2026-09-15. The build satisfies the Phase 4 gate in `docs/implementation-plan.md`. The project moves to Phase 5 (review and verify).
 
-Unused dependencies (`@google/genai`, `express`, `dotenv`) should be removed as a clean-up action before the Phase 6 submission.
+Unused dependencies (`@google/genai`, `express`, `dotenv`, `@types/express`) have been removed from `package.json` as a clean-up action.
 
 ## Evidence or verification
 
-No browser run has been recorded yet. The following paths remain unverified:
+Human browser verification completed 2026-09-15. All paths passed:
 
-- [ ] Happy path (all six fractions, first try correct)
-- [ ] Wrong-partition feedback path
-- [ ] Wrong-tick feedback path
-- [ ] Repeated-error / thinking-check path
-- [ ] Keyboard-only navigation
-- [ ] Narrow-screen layout (≤375 px)
-- [ ] Completion summary and restart.
+- [x] Happy path (all six fractions, first try correct)
+- [x] Wrong-partition feedback path
+- [x] Wrong-tick feedback path
+- [x] Repeated-error / thinking-check path
+- [x] Keyboard-only navigation
+- [x] Narrow-screen layout (≤375 px)
+- [x] Completion summary and restart

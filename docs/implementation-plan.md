@@ -88,4 +88,8 @@ Work should proceed in the smallest reviewable slices that produce evidence for 
 
 ## Current next action
 
-Run [Prompt 002](ai-log/002-google-ai-studio-initial-build.md) in Google AI Studio to generate the smallest Fraction Line Lab vertical slice. Review the result against the stated learning loop before requesting visual improvements or additional features.
+**Phase 4 gate passed** — Human browser verification completed 2026-09-15. All seven acceptance-criteria paths confirmed. See [`ai-log/002`](ai-log/002-google-ai-studio-initial-build.md).
+
+**Phase 5 — Review and verify.** Conduct the full review against every acceptance criterion, including automated lint check (`npm run lint`) and human usability checks. Record findings.
+
+**Phase 6 — Package the submission.** Complete the README, produce the one-page technical note, and capture the 3–5 minute demonstration video.
