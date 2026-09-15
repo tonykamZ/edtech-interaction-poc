@@ -48,6 +48,17 @@ Each new decision should include:
 - **Rejected alternatives:** Recall Quest risks becoming a generic quiz and introduces answer-matching ambiguity. Algebra Step Detective adds explanation and animation complexity that is less suitable for the timebox.
 - **Consequences:** The first implementation should cover only one complete fraction-number-line loop with local content. Broader content authoring, accounts, persistence, analytics, voice, and runtime AI are out of scope.
 
+## D-005 — Ground the selected interaction
+
+- **Status:** Accepted
+- **Context:** The selected activity needs a real source, a direct mapping from its learning claim to app behaviour, and a falsifiable failure criterion.
+- **Research source:** Valerie J. Shute, ["Focus on Formative Feedback"](https://doi.org/10.3102/0034654307313795), *Review of Educational Research* 78(1), 2008. The relevant claim is that formative feedback should be timely and specific enough to help learners modify their thinking or behaviour.
+- **Curriculum alignment:** Common Core Mathematics [3.NF.A.2](https://corestandards.org/wp-content/uploads/2023/09/Math_Standards1.pdf) asks learners to understand and represent fractions as numbers on a number line.
+- **One-line mapping:** The learner partitions a 0–1 number line and places a fraction; after an error, the app identifies whether the denominator or interval count was misunderstood and allows an immediate retry.
+- **Failure criterion:** The idea is failing if learners repeat the same error after targeted feedback or can finish mainly through guessing rather than understanding equal intervals.
+- **Evidence gap:** These sources support the design rationale, but they do not prove this PoC is effective. Usability observations can show whether the loop works as intended; a learning-effect claim would require a more suitable evaluation.
+- **Consequences:** Feedback must diagnose the learner's step rather than only mark an answer right or wrong. The first build needs no runtime AI.
+
 ## Commit and release gate
 
 The current documentation changes must be reviewed by the human owner before any commit. A later commit, if approved, must use the requested `tonykamZ` Git identity. Commit, push, deployment, and release remain separate human-authorized actions.

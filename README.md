@@ -9,15 +9,23 @@ This repository will serve two purposes:
 
 ## Current status
 
-**Planning only. No application has been implemented yet.**
+**Concept selected; initial build prompt prepared. No application has been implemented or verified yet.**
 
-The current milestone is to understand the brief, explore three bounded activity concepts, choose one with explicit reasons, and identify the learning source that will support it.
+The selected concept is Fraction Line Lab for upper-primary learners. The current milestone is to generate and verify its smallest complete learning loop.
 
 ## Required learning loop
 
 `prompt → learner action → feedback → retry or next item`
 
 The learner's input must change what happens next. The finished activity must be usable by a primary or junior-secondary learner, or by their teacher.
+
+## Selected activity and research fit
+
+- **Learning objective:** Place unit and non-unit fractions from 0 to 1 on a number line by dividing the whole into equal intervals.
+- **Research source:** Valerie J. Shute, ["Focus on Formative Feedback"](https://doi.org/10.3102/0034654307313795), *Review of Educational Research* 78(1), 2008.
+- **Curriculum alignment:** Common Core Mathematics [3.NF.A.2](https://corestandards.org/wp-content/uploads/2023/09/Math_Standards1.pdf), representing fractions as numbers on a number line.
+- **One-line mapping:** The learner partitions a 0–1 number line and places a fraction; after an error, the app identifies whether the denominator or interval count was misunderstood and allows an immediate retry.
+- **Failure criterion:** The idea is failing if learners repeat the same error after targeted feedback or can finish mainly through guessing rather than understanding equal intervals.
 
 ## Documentation
 

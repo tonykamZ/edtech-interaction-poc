@@ -17,6 +17,12 @@ Generate the smallest accessible web version of Fraction Line Lab that demonstra
 >
 > **Learning objective:** Learners place unit and non-unit fractions from 0 to 1 on a number line by dividing the whole into equal intervals.
 >
+> **Research basis:** Shute (2008), *Focus on Formative Feedback*: feedback should be timely and specific enough to help learners correct their thinking.
+>
+> **Design mapping:** The learner partitions a 0–1 number line and places a fraction; after an error, the app identifies whether the denominator or interval count was misunderstood and allows an immediate retry.
+>
+> **Failure check:** The idea is failing if learners repeat the same error after targeted feedback or can finish mainly through guessing rather than understanding equal intervals.
+>
 > Create one simple screen and one complete loop:
 >
 > 1. Show a target fraction from this fixed local set: 1/2, 1/3, 2/3, 1/4, 3/4, 5/6.

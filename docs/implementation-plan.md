@@ -2,7 +2,7 @@
 
 ## Status
 
-**Draft framework only.** The activity, learning source, acceptance criteria, and technology stack have not been selected. This file defines the gates for later planning; it does not authorize application implementation.
+**Ready for the initial vertical slice.** Fraction Line Lab, its learning foundation, and the minimum acceptance criteria are approved. No generated application has been reviewed or verified yet.
 
 ## Guiding approach
 
@@ -29,6 +29,14 @@ Work should proceed in the smallest reviewable slices that produce evidence for 
 
 **Gate:** Human owner approves the source and product mapping.
 
+### Approved learning foundation
+
+- **Learning objective:** Place unit and non-unit fractions from 0 to 1 on a number line by dividing the whole into equal intervals.
+- **Research source:** Shute (2008), ["Focus on Formative Feedback"](https://doi.org/10.3102/0034654307313795).
+- **Curriculum alignment:** Common Core Mathematics [3.NF.A.2](https://corestandards.org/wp-content/uploads/2023/09/Math_Standards1.pdf).
+- **One-line mapping:** The learner partitions a 0–1 number line and places a fraction; after an error, the app identifies whether the denominator or interval count was misunderstood and allows an immediate retry.
+- **Failure criterion:** The idea is failing if learners repeat the same error after targeted feedback or can finish mainly through guessing rather than understanding equal intervals.
+
 ## Phase 3 — Define the smallest playable version
 
 - Write observable acceptance criteria for the full loop.
@@ -38,6 +46,17 @@ Work should proceed in the smallest reviewable slices that produce evidence for 
 - Allocate the timebox and mark explicit non-goals.
 
 **Gate:** Human owner approves material behavior, architecture, data, and external-service choices.
+
+### Initial vertical-slice acceptance criteria
+
+- Use only the six fixed local items: 1/2, 1/3, 2/3, 1/4, 3/4, and 5/6.
+- Ask the learner to choose the number of equal parts before selecting a position.
+- Support mouse, touch, and keyboard operation without requiring drag-and-drop.
+- Distinguish a wrong partition from a wrong interval count and give specific feedback for each.
+- Keep the current item available for immediate retry after an error.
+- Advance only after a correct response, show progress, and finish with a summary and restart.
+- Remain usable on a narrow screen with visible focus and readable contrast.
+- Use local deterministic logic with no backend, account, persistence, analytics, voice, or runtime AI.
 
 ## Phase 4 — Implement one vertical slice
 
