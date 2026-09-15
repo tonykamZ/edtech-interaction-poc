@@ -37,14 +37,6 @@ export interface CriterionEvaluation {
   isGuessingDetected?: boolean;
 }
 
-export interface BehavioralRequirementSpec {
-  id: string;
-  title: string;
-  mappingDefinition: string;
-  failureCriterion: string;
-  retryBehavior: string;
-}
-
 export interface ItemAttemptRecord {
   fractionId: string;
   label: string;
@@ -55,5 +47,4 @@ export interface ItemAttemptRecord {
   repeatedErrors: number;
   guessingTriggered: boolean;
   thinkingCheckRequired: boolean;
-  mastered: boolean;
 }

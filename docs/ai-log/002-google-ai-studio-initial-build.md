@@ -9,7 +9,7 @@ Generate the smallest accessible web version of Fraction Line Lab that demonstra
 - **Date:** 2026-09-15
 - **Stage:** Initial implementation
 - **Target tool:** Google AI Studio
-- **Status:** Verified by human browser run (2026-09-15). All acceptance-criteria paths passed.
+- **Status:** Generated build reviewed and simplified; informal human usability review pending.
 
 ## Prompt
 
@@ -42,42 +42,42 @@ A complete React + Vite + TypeScript application was generated. The implementati
 - **Data:** Six fixed local fractions (`1/2`, `1/3`, `2/3`, `1/4`, `3/4`, `5/6`) in `src/data/fractions.ts`. No backend or runtime AI.
 - **Interaction flow:** Partition selector → number-line tick selection → feedback → retry or advance.
 - **Feedback specificity:** Two diagnostic categories are implemented (`denominator_misunderstanding`, `interval_count_misunderstanding`). Wrong-partition errors explain equal parts; wrong-tick errors highlight the counted intervals.
-- **Anti-guessing / failure-criterion tracking:** The app counts repeated errors per item and triggers a "thinking check" pause when the same error repeats or when three or more attempts are made on either step, directly addressing the stated failure criterion.
+- **Repeated-error tracking:** The app counts repeated attempts and shows a short pause-and-check scaffold. This supports retry but does not prove that guessing was prevented.
 - **Completion:** Progress bar, completion summary with per-item attempt records, and a restart button.
 - **Accessibility:** Semantic HTML controls, keyboard-navigable tick marks, visible focus styles, readable contrast.
-- **Components:** `PartitionSelector`, `NumberLine`, `FeedbackBanner`, `FractionDisplay`, `CompletionSummary`, `BehavioralCriteriaGuide`.
+- **Components:** `PartitionSelector`, `NumberLine`, `FeedbackBanner`, `FractionDisplay`, and `CompletionSummary`.
 
-**Unused dependencies in `package.json`:** The starter template included `@google/genai`, `express`, and `dotenv`. None of these are imported or used by the implemented code. They represent starter-template residue, not deliberate choices. They should be removed before any release.
+Unused starter-template dependencies were removed during review. The final app has no backend or runtime AI dependency.
 
 ## Human review
 
-The generated code has not yet been run in a browser. Before accepting the build, the human owner should verify:
+Codex reviewed the generated code and browser behaviour. The human owner approved a focused simplification pass to remove answer-revealing guidance, learner-facing research jargon, and unsupported completion claims. Informal review with learners or teachers remains.
 
-1. All six fractions load and sequence correctly.
-2. Wrong partition → correct partition-feedback message appears and the number line is not yet interactive.
-3. Wrong tick → correct tick-feedback message appears and the same item is kept for retry.
-4. Same error repeated twice → thinking-check pause triggers and unlocks after confirmation.
-5. Correct tick → Next/Finish button advances or ends the session.
-6. Completion summary appears after all six items; restart resets fully.
-7. Keyboard-only operation: Tab reaches all controls; Enter/Space activates them.
-8. Narrow screen (≤375 px): no horizontal overflow; text remains readable.
+- [x] All six fractions load and sequence correctly.
+- [x] Wrong partition shows specific feedback and keeps number-line selection locked.
+- [x] Wrong tick shows specific feedback and keeps the same item available for retry.
+- [x] Repeating the same error shows the pause-and-check scaffold and unlocks after confirmation.
+- [x] A correct tick enables the next-item or summary action.
+- [x] Completion appears after all six items and restart resets the activity.
+- [x] Keyboard activation advances the partition, tick, and next-item controls.
+- [ ] Independently observe the layout at 375 px or narrower.
 
-No AI output should be accepted as evidence until these paths are observed in a browser.
+The remaining accessibility checks and informal usability review must not be reported as complete until observed.
 
 ## Decision or change
 
-**Accepted.** The human owner confirmed all seven paths in a browser run on 2026-09-15. The build satisfies the Phase 4 gate in `docs/implementation-plan.md`. The project moves to Phase 5 (review and verify).
-
-Unused dependencies (`@google/genai`, `express`, `dotenv`, `@types/express`) have been removed from `package.json` as a clean-up action.
+**Revised.** The core Fraction Line Lab interaction was retained. The generated diagnostic dashboard was removed from the learner experience, feedback language was simplified, completion claims were limited to observed session results, and unused dependencies were removed. See Decisions D-006 and D-007.
 
 ## Evidence or verification
 
-Human browser verification completed 2026-09-15. All paths passed:
+Local verification completed 2026-09-15:
 
-- [x] Happy path (all six fractions, first try correct)
+- [x] Clean dependency installation with no reported vulnerabilities
+- [x] Type-check (`npm run lint`)
+- [x] Production build (`npm run build`)
+- [x] Happy path through all six fractions
 - [x] Wrong-partition feedback path
 - [x] Wrong-tick feedback path
-- [x] Repeated-error / thinking-check path
-- [x] Keyboard-only navigation
-- [x] Narrow-screen layout (≤375 px)
+- [x] Repeated-error pause and unlock
 - [x] Completion summary and restart
+- [ ] Informal upper-primary learner or teacher usability review

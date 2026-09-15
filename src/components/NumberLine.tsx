@@ -83,7 +83,7 @@ export function NumberLine({
               2
             </span>
             <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
-              Step 2: Number Line Track [0 to 1 Whole]
+              Step 2: Choose the fraction position
             </span>
           </div>
           <div className="text-sm font-semibold text-slate-800 mt-1">
@@ -94,7 +94,7 @@ export function NumberLine({
             ) : !isPartitionCorrect ? (
               <span className="text-amber-800 font-bold flex items-center gap-1.5">
                 <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
-                Partition Mismatch: line has {partitions} parts (1/{partitions} each). Target needs {targetDenominator} parts.
+                These parts do not match the target fraction yet.
               </span>
             ) : (
               <span className="text-emerald-900 font-semibold flex items-center gap-1.5">
@@ -122,7 +122,7 @@ export function NumberLine({
             )}
             <span className="text-xs bg-slate-200 text-slate-800 font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
               <Layers className="w-3.5 h-3.5" />
-              D = {partitions} equal parts
+              {partitions} equal parts
             </span>
           </div>
         )}
@@ -416,7 +416,7 @@ export function NumberLine({
             'Awaiting Step 1: Select the number of equal parts above.'
           ) : !isPartitionCorrect ? (
             <strong className="text-amber-800 font-semibold">
-              ⚠️ Denominator Misunderstanding active. Re-select the correct denominator parts in Step 1 to unlock mark placement.
+              ⚠️ Try Step 1 again before choosing a position.
             </strong>
           ) : interactive ? (
             '💡 Click or tap a mark, or use keyboard ← → arrow keys. The colored bar shows your accumulated equal intervals.'

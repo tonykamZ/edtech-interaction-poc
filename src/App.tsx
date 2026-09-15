@@ -5,7 +5,6 @@ import { NumberLine } from './components/NumberLine.tsx';
 import { PartitionSelector } from './components/PartitionSelector.tsx';
 import { FeedbackBanner } from './components/FeedbackBanner.tsx';
 import { CompletionSummary } from './components/CompletionSummary.tsx';
-import { BehavioralCriteriaGuide } from './components/BehavioralCriteriaGuide.tsx';
 import { evaluatePartition, evaluateTick } from './utils/criteriaEvaluation.ts';
 import { CriterionEvaluation, ItemAttemptRecord } from './types.ts';
 import { Compass } from 'lucide-react';
@@ -89,7 +88,6 @@ export default function App() {
       repeatedErrors: repeatedErrorsThisItem,
       guessingTriggered: partitionAttempts.length >= 3 || tickAttempts.length >= 3,
       thinkingCheckRequired: repeatedErrorsThisItem > 0 || partitionAttempts.length >= 3 || tickAttempts.length >= 3,
-      mastered: true,
     };
 
     setAttemptRecords((prev) => [...prev, record]);
@@ -144,9 +142,7 @@ export default function App() {
               <h1 className="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight">
                 Fraction Line Lab
               </h1>
-              <p className="text-xs text-slate-500 font-medium">
-                Upper-Primary Fractions • Equal Interval Mapping
-              </p>
+              <p className="text-xs text-slate-500 font-medium">Fractions on a number line</p>
             </div>
           </div>
 
@@ -187,15 +183,6 @@ export default function App() {
           <CompletionSummary onRestart={handleRestart} attemptRecords={attemptRecords} />
         ) : (
           <div className="flex flex-col gap-6" id="lab-workspace">
-            {/* Behavioral Criteria & Mapping Specification Guide */}
-            <BehavioralCriteriaGuide
-              currentFraction={currentFraction}
-              selectedParts={selectedParts}
-              selectedTick={selectedTick}
-              isPartitionCorrect={isPartitionCorrect}
-              isTickCorrect={isTickCorrect}
-            />
-
             {/* Target Fraction Challenge Card */}
             <section
               aria-labelledby="target-fraction-heading"
@@ -204,12 +191,8 @@ export default function App() {
             >
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                 <div className="text-center sm:text-left">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs font-bold rounded-full mb-3">
-                    <span>Target Fraction</span>
-                    <span>•</span>
-                    <span>
-                      {currentFraction.isUnitFraction ? 'Unit Fraction' : 'Non-Unit Fraction'}
-                    </span>
+                  <div className="inline-flex px-3 py-1 bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs font-bold rounded-full mb-3">
+                    Target Fraction
                   </div>
                   <h2
                     id="target-fraction-heading"
@@ -217,13 +200,9 @@ export default function App() {
                   >
                     Place <span className="text-indigo-600">{currentFraction.label}</span> on the line
                   </h2>
-                  <p className="text-sm text-slate-600 mt-1 max-w-md">
-                    Word name: <strong className="text-slate-800 capitalize">{currentFraction.wordName}</strong>
-                  </p>
                 </div>
 
-                {/* Visual Fraction Card with Explanatory Anatomy */}
-                <div className="flex items-center gap-4 bg-slate-50 border border-slate-200 rounded-xl px-6 py-4 shadow-2xs">
+                <div className="bg-slate-50 border border-slate-200 rounded-xl px-8 py-4 shadow-2xs">
                   <FractionDisplay
                     numerator={currentFraction.numerator}
                     denominator={currentFraction.denominator}
@@ -231,20 +210,6 @@ export default function App() {
                     highlightNumerator={evaluation?.category === 'interval_count_misunderstanding'}
                     size="lg"
                   />
-                  <div className="border-l border-slate-200 pl-4 text-xs flex flex-col gap-2 font-medium">
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0" />
-                      <span className="text-slate-700">
-                        Numerator <strong>N = {currentFraction.numerator}</strong> (intervals to count)
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-full bg-indigo-600 shrink-0" />
-                      <span className="text-slate-700">
-                        Denominator <strong>D = {currentFraction.denominator}</strong> (equal parts in 1 whole)
-                      </span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </section>
@@ -299,7 +264,7 @@ export default function App() {
 
       {/* Clean Footer */}
       <footer className="py-4 text-center text-xs text-slate-500 border-t border-slate-200 bg-white">
-        <p>Fraction Line Lab • Formative Feedback & Equal Interval Verification (Shute, 2008)</p>
+        <p>Fraction Line Lab • Practice placing fractions from 0 to 1</p>
       </footer>
     </div>
   );

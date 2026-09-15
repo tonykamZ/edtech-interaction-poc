@@ -9,9 +9,9 @@ This repository will serve two purposes:
 
 ## Current status
 
-**Initial vertical slice implemented; awaiting human verification.**
+**Initial vertical slice implemented and locally verified; informal learner or teacher usability review remains.**
 
-The selected concept is Fraction Line Lab for upper-primary learners. An initial build was generated via Google AI Studio (Prompt 002) and is available in `src/`. The complete learning loop is present in code, but the acceptance criteria have not yet been verified against observed browser behaviour. See `docs/ai-log/002-google-ai-studio-initial-build.md` for the build record and outstanding verification checklist.
+The selected concept is Fraction Line Lab for upper-primary learners. An initial build was generated via Google AI Studio (Prompt 002), then simplified after review so the learner sees age-appropriate guidance and the completion screen reports only observed session results. See `docs/ai-log/002-google-ai-studio-initial-build.md` for the build and verification record.
 
 ## Required learning loop
 

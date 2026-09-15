@@ -2,7 +2,7 @@
 
 **Project:** EdTech Interaction PoC  
 **Date:** 2026-09-15  
-**Status:** Phase 5 — verified; pending Phase 6 release decision  
+**Status:** Phase 5 — engineering checks passed; informal usability review pending
 
 ---
 
@@ -29,11 +29,11 @@ A small responsive web app — **Fraction Line Lab** — for upper-primary learn
 4. The app gives immediate, specific feedback — it distinguishes a wrong partition ("the denominator tells you how many equal parts") from a wrong interval count ("count the intervals, not the tick marks") and keeps the same item available for retry.
 5. Advance is allowed only after both steps are correct. A progress bar tracks items; a summary and restart button appear on completion.
 
-**Anti-guessing guard (failure-criterion implementation):** If the same error is repeated, or if three or more attempts are made on either step, a "thinking check" pause activates. The learner must confirm they are ready to try again before the controls unlock.
+**Repeated-error pause:** If the same error is repeated, or if three or more attempts are made on either step, a short "pause and check" prompt appears before retry. This is a scaffold, not proof that guessing has been prevented.
 
-**Stack:** React 19 + Vite 6 + TypeScript + Tailwind CSS v4. Fully local — no backend, no database, no accounts, no analytics, no runtime AI, no network requests.
+**Stack:** React 19 + Vite 6 + TypeScript + Tailwind CSS v4. Fully local — no backend, database, account, analytics, runtime AI, or network request.
 
-**Verified paths (human browser run, 2026-09-15):** happy path, wrong-partition feedback, wrong-tick feedback, repeated-error thinking-check, keyboard-only navigation, narrow-screen layout (≤375 px), completion summary, restart.
+**Locally verified paths (2026-09-15):** clean dependency installation, type-check, production build, six-item happy path, wrong-partition feedback, wrong-tick feedback, repeated-error pause, keyboard activation, completion summary, and restart. Narrow-screen behaviour remains part of the informal usability check.
 
 ---
 
@@ -41,7 +41,7 @@ A small responsive web app — **Fraction Line Lab** — for upper-primary learn
 
 The initial build was generated from a single prompt submitted to Google AI Studio (see [`docs/ai-log/002`](ai-log/002-google-ai-studio-initial-build.md)). The model produced:
 
-- the complete React component structure (`App.tsx`, `NumberLine.tsx`, `PartitionSelector.tsx`, `FeedbackBanner.tsx`, `FractionDisplay.tsx`, `CompletionSummary.tsx`, `BehavioralCriteriaGuide.tsx`);
+- the React component structure (`App.tsx`, `NumberLine.tsx`, `PartitionSelector.tsx`, `FeedbackBanner.tsx`, `FractionDisplay.tsx`, and `CompletionSummary.tsx`);
 - the deterministic evaluation logic (`utils/criteriaEvaluation.ts`);
 - the six-item local fraction dataset (`src/data/fractions.ts`);
 - the two-category feedback system distinguishing denominator and interval-count errors; and
@@ -53,9 +53,9 @@ The documentation scaffold — `README.md`, `docs/task-brief.md`, `docs/idea-exp
 
 ## 4. One AI suggestion the human rejected, and why
 
-**Suggestion:** During the idea-exploration phase (Prompt 001), the AI recommended including a "confidence rating" step after each fraction placement — asking the learner to rate how sure they were before seeing feedback.
+**Suggestion:** During idea exploration, AI proposed Recall Quest, an adaptive ecosystem-vocabulary retrieval activity.
 
-**Rejected because:** Adding a confidence step would lengthen the interaction, introduce a second learner-input variable that needs its own feedback logic, and risk confusion for the upper-primary audience. The brief prioritises a clear, minimal loop over richer instrumentation. A confidence rating would be appropriate scope for a research study but not for an 8–12 hour PoC. Recorded as a rejected option in `docs/decisions.md`.
+**Rejected because:** Free-text answer matching could reject valid synonyms, and the activity risked becoming a generic quiz whose learning value would be difficult to demonstrate in five minutes. Fraction Line Lab provides a more visible state change and deterministic feedback within the timebox. This rejection is recorded in Decision D-004.
 
 ---
 

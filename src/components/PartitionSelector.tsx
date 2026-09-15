@@ -32,7 +32,7 @@ export function PartitionSelector({
               1
             </span>
             <h2 className="text-base font-extrabold text-slate-900">
-              Step 1: Divide the Whole (Denominator Mapping)
+              Step 1: Make equal parts
             </h2>
           </div>
           <p className="text-sm text-slate-600 mt-1">
@@ -45,19 +45,19 @@ export function PartitionSelector({
           {disabledDueToThinkingCheck && (
             <span className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
               <Lock className="w-3.5 h-3.5 text-amber-700" />
-              Thinking Check Active
+              Pause and check
             </span>
           )}
           {isSelectedCorrect && (
             <span className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-300">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              Partition Matched (P = {targetDenominator})
+              Correct number of parts
             </span>
           )}
           {isSelectedIncorrect && !disabledDueToThinkingCheck && (
             <span className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
               <AlertCircle className="w-4 h-4 text-amber-600" />
-              Mismatch (Selected {currentPartition} ≠ D)
+              Try again
             </span>
           )}
         </div>
@@ -66,7 +66,7 @@ export function PartitionSelector({
       <div
         className="grid grid-cols-3 sm:grid-cols-6 gap-3"
         role="radiogroup"
-        aria-label="Select number of equal parts (denominator mapping)"
+        aria-label="Select the number of equal parts"
       >
         {PARTITION_CHOICES.map((parts) => {
           const isSelected = currentPartition === parts;
@@ -101,20 +101,7 @@ export function PartitionSelector({
             >
               <span className="text-2xl font-black">{parts}</span>
               <span className="text-xs mt-0.5 text-slate-600 font-medium">
-                {parts === 2
-                  ? '2 halves'
-                  : parts === 3
-                  ? '3 thirds'
-                  : parts === 4
-                  ? '4 fourths'
-                  : parts === 5
-                  ? '5 fifths'
-                  : parts === 6
-                  ? '6 sixths'
-                  : '8 eighths'}
-              </span>
-              <span className="text-[10px] text-slate-400 font-mono mt-0.5">
-                1/{parts} each
+                equal parts
               </span>
               {isSelected && (
                 <span
@@ -124,7 +111,7 @@ export function PartitionSelector({
                       : 'bg-amber-200 text-amber-900'
                   }`}
                 >
-                  {isCorrect ? 'Matched' : 'Mismatch'}
+                  {isCorrect ? 'Correct' : 'Try again'}
                 </span>
               )}
             </button>

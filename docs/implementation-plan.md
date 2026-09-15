@@ -2,7 +2,7 @@
 
 ## Status
 
-**Ready for the initial vertical slice.** Fraction Line Lab, its learning foundation, and the minimum acceptance criteria are approved. No generated application has been reviewed or verified yet.
+**Vertical slice implemented and locally verified.** The focused review and simplification pass is complete; informal learner or teacher usability review remains before a release recommendation.
 
 ## Guiding approach
 
@@ -88,8 +88,6 @@ Work should proceed in the smallest reviewable slices that produce evidence for 
 
 ## Current next action
 
-**Phase 4 gate passed** — Human browser verification completed 2026-09-15. All seven acceptance-criteria paths confirmed. See [`ai-log/002`](ai-log/002-google-ai-studio-initial-build.md).
+**Phase 5 — Review and verify.** Run a brief informal session with two or three upper-primary learners or teachers. Observe whether they understand the two steps, whether feedback helps a retry, and whether the pause after repeated errors helps or frustrates.
 
-**Phase 5 — Review and verify.** Conduct the full review against every acceptance criterion, including automated lint check (`npm run lint`) and human usability checks. Record findings.
-
-**Phase 6 — Package the submission.** Complete the README, produce the one-page technical note, and capture the 3–5 minute demonstration video.
+**Phase 6 — Package the submission.** Record those observations, make the human release decision, and capture the 3–5 minute demonstration video.

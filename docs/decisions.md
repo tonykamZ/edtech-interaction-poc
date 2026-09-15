@@ -63,11 +63,20 @@ Each new decision should include:
 
 - **Status:** Accepted
 - **Context:** The initial build was generated from a Google AI Studio starter template. The template included dependencies (`@google/genai`, `express`, `dotenv`, `@types/express`) that were not used by the implemented code.
-- **Decision:** Adopt the React 19 + Vite 6 + TypeScript stack that the generated code uses. Remove the four unused starter-template dependencies from `package.json`.
-- **Reasoning:** The implemented code requires only React, Vite, TypeScript, Tailwind CSS v4, `lucide-react`, and `motion`. Keeping unused packages adds installation cost and creates a misleading implication that a backend or Gemini API integration is part of the PoC.
+- **Decision:** Adopt the React 19 + Vite 6 + TypeScript stack that the generated code uses. Remove unused starter-template dependencies, including `motion`, from `package.json`.
+- **Reasoning:** The implemented code requires only React, Vite, TypeScript, Tailwind CSS v4, and `lucide-react`. Keeping unused packages adds installation cost and misrepresents the PoC architecture.
 - **Rejected alternatives:** Keeping the unused packages was rejected because it would misrepresent the architecture in a public repository.
 - **Consequences:** The app remains fully local and static. No backend, no Gemini API calls, no server process. Any future decision to add a backend or model call requires a new decision record and human approval.
-- **Evidence:** Human-verified browser run (2026-09-15) confirmed the app works without any of the removed packages.
+- **Evidence:** Clean installation, type-check, production build, and browser review confirm the app works without the removed packages.
+
+## D-007 — Simplify the generated learner experience
+
+- **Status:** Accepted
+- **Context:** Review found that the generated UI exposed the numerator and denominator rules before the learner acted, displayed research and evaluation jargon to children, and claimed that completion proved comprehension.
+- **Decision:** Remove the learner-facing research specification and pre-answer anatomy, keep research evidence in documentation, use age-appropriate feedback, and make the completion summary report attempts without claiming learning effectiveness.
+- **Reasoning:** The learner should interpret the fraction before receiving targeted feedback. The app can observe choices and retries, but it cannot prove comprehension or long-term learning.
+- **Rejected alternative:** Keeping the generated diagnostic dashboard was rejected because it served the reviewer rather than the upper-primary learner and weakened the validity of the interaction.
+- **Consequences:** Research fit remains explicit in the README and technical note. The learner UI is smaller and all completion language is limited to observed session behaviour.
 
 ## Commit and release gate
 
