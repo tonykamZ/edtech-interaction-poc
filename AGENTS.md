@@ -40,7 +40,7 @@ The repository is in **concept exploration**. Do not implement the application u
 ## AI collaboration
 
 - Use AI for bounded exploration, planning, implementation, and review tasks.
-- Record meaningful prompts and summarize useful outputs in `docs/ai-log.md`.
+- Record each meaningful prompt in its own Markdown file under `docs/ai-log/`, with a clear objective and a summary of useful output.
 - Record accepted and rejected suggestions, with human reasoning, in `docs/decisions.md`.
 - Curate the decision trail; do not publish a raw conversation transcript.
 - Do not present AI output as evidence until it has been reviewed or verified.

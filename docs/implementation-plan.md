@@ -12,7 +12,7 @@ Work should proceed in the smallest reviewable slices that produce evidence for 
 
 ## Phase 1 — Choose the learning interaction
 
-- Generate three bounded concepts using Prompt 001.
+- Generate three bounded concepts using [Prompt 001](ai-log/001-three-bounded-activity-concepts.md).
 - Compare them using the criteria in `docs/idea-exploration.md`.
 - Select one specific learner, learning objective, and interaction loop.
 - Record the selection and rejected alternatives in `docs/decisions.md`.
@@ -69,4 +69,4 @@ Work should proceed in the smallest reviewable slices that produce evidence for 
 
 ## Current next action
 
-Run Prompt 001, review the three concepts, and make Decision D-004. No app code should be created before that review.
+Run [Prompt 001](ai-log/001-three-bounded-activity-concepts.md), review the three concepts, and make Decision D-004. No app code should be created before that review.

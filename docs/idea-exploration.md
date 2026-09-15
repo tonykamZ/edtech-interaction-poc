@@ -4,7 +4,7 @@
 
 Explore three small learning activities before choosing a product direction. The goal is not to pick the most impressive idea; it is to find the clearest research-backed interaction that can be built, tested, and demonstrated within the timebox.
 
-The first exploration prompt is recorded in [`ai-log.md`](ai-log.md#prompt-001-three-bounded-activity-concepts).
+The first exploration prompt is recorded in [`ai-log/001-three-bounded-activity-concepts.md`](ai-log/001-three-bounded-activity-concepts.md).
 
 ## Evaluation criteria
 

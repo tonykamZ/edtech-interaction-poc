@@ -1,0 +1,23 @@
+# AI Collaboration Log
+
+This folder is a curated decision trail, not a raw transcript. Each meaningful AI prompt belongs in one Markdown file so its objective, output, human review, decision, and evidence remain easy to inspect.
+
+Never include secrets, personal data, or private source content.
+
+## File format
+
+Each prompt file should contain:
+
+- a clear objective;
+- date, stage, and status;
+- one prompt section containing the exact prompt;
+- an output summary;
+- human review;
+- the resulting decision or change; and
+- evidence or verification.
+
+## Prompt index
+
+| ID | Objective | Stage | Status |
+| --- | --- | --- | --- |
+| [001](001-three-bounded-activity-concepts.md) | Generate three bounded learning activities for comparison before selecting a product direction. | Idea exploration | Response and human review pending |
