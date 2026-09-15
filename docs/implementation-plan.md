@@ -69,4 +69,4 @@ Work should proceed in the smallest reviewable slices that produce evidence for 
 
 ## Current next action
 
-Run [Prompt 001](ai-log/001-three-bounded-activity-concepts.md), review the three concepts, and make Decision D-004. No app code should be created before that review.
+Review the three concepts in [`docs/idea-exploration.md`](idea-exploration.md) and make Decision D-004. After approval, ground the selected concept in its source and write observable acceptance criteria before generating app code.

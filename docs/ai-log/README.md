@@ -20,4 +20,4 @@ Each prompt file should contain:
 
 | ID | Objective | Stage | Status |
 | --- | --- | --- | --- |
-| [001](001-three-bounded-activity-concepts.md) | Generate three bounded learning activities for comparison before selecting a product direction. | Idea exploration | Response and human review pending |
+| [001](001-three-bounded-activity-concepts.md) | Generate three bounded learning activities for comparison before selecting a product direction. | Idea exploration | Response recorded; human review pending |

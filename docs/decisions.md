@@ -41,10 +41,10 @@ Each new decision should include:
 ## D-004 — Select the learning activity
 
 - **Status:** Proposed
-- **Context:** Three small activity concepts still need to be generated and compared.
-- **Options considered:** Pending `docs/idea-exploration.md`.
+- **Context:** Three small activity concepts have been generated and compared; one direction now needs human approval.
+- **Options considered:** Fraction Line Lab, Recall Quest: Ecosystem Vocabulary, and Algebra Step Detective. See `docs/idea-exploration.md`.
 - **Decision:** Pending human review.
-- **Reasoning:** Pending.
+- **Reasoning:** AI recommends Fraction Line Lab for its visible state change, deterministic feedback, curriculum alignment, and low implementation risk. The human owner has not accepted that recommendation.
 - **Consequences:** Application implementation remains blocked until this decision is accepted.
 
 ## Commit and release gate

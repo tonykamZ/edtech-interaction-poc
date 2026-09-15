@@ -8,7 +8,7 @@ Generate three small, comparable EdTech activity concepts so the human owner can
 
 - **Date:** 2026-09-15
 - **Stage:** Idea exploration
-- **Status:** Prompt recorded; response and human review pending.
+- **Status:** Response recorded; human review pending.
 
 ## Prompt
 
@@ -27,16 +27,22 @@ Generate three small, comparable EdTech activity concepts so the human owner can
 
 ## Output summary
 
-Pending.
+Three concepts were developed and compared in [`docs/idea-exploration.md`](../idea-exploration.md):
+
+1. **Fraction Line Lab** — an upper-primary number-line activity using specific formative feedback;
+2. **Recall Quest** — a junior-secondary ecosystem vocabulary activity using retrieval practice and adaptive re-queuing; and
+3. **Algebra Step Detective** — a junior-secondary worked-example activity using structured self-explanation.
+
+The AI recommendation is Fraction Line Lab because it makes the learner-driven state change and feedback loop easy to observe, supports deterministic evaluation without an external model, and fits the timebox. The recommendation is not an accepted decision.
 
 ## Human review
 
-Pending. The three concepts will be assessed using [`docs/idea-exploration.md`](../idea-exploration.md).
+Pending. The human owner needs to assess the three concepts and either accept one, request a revision, or reject all three.
 
 ## Decision or change
 
-Pending. The selected concept and rejected alternatives will be recorded in [`docs/decisions.md`](../decisions.md).
+No product direction has been accepted. The selected concept and rejected alternatives will be recorded in [`docs/decisions.md`](../decisions.md) after human review.
 
 ## Evidence or verification
 
-Not applicable at this stage. No AI-generated concept has been accepted and no application behavior has been implemented.
+The cited publications and curriculum standard were checked at their publisher or official source pages. Their application to these concepts remains a design inference requiring human review. No application behavior has been implemented or tested.
