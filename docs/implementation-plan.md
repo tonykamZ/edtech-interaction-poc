@@ -69,4 +69,4 @@ Work should proceed in the smallest reviewable slices that produce evidence for 
 
 ## Current next action
 
-Review the three concepts in [`docs/idea-exploration.md`](idea-exploration.md) and make Decision D-004. After approval, ground the selected concept in its source and write observable acceptance criteria before generating app code.
+Run [Prompt 002](ai-log/002-google-ai-studio-initial-build.md) in Google AI Studio to generate the smallest Fraction Line Lab vertical slice. Review the result against the stated learning loop before requesting visual improvements or additional features.

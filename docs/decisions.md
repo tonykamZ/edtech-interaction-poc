@@ -40,12 +40,13 @@ Each new decision should include:
 
 ## D-004 — Select the learning activity
 
-- **Status:** Proposed
-- **Context:** Three small activity concepts have been generated and compared; one direction now needs human approval.
+- **Status:** Accepted
+- **Context:** Three small activity concepts were generated and compared for learning-loop clarity, feedback, accessibility, evidence, and implementation risk.
 - **Options considered:** Fraction Line Lab, Recall Quest: Ecosystem Vocabulary, and Algebra Step Detective. See `docs/idea-exploration.md`.
-- **Decision:** Pending human review.
-- **Reasoning:** AI recommends Fraction Line Lab for its visible state change, deterministic feedback, curriculum alignment, and low implementation risk. The human owner has not accepted that recommendation.
-- **Consequences:** Application implementation remains blocked until this decision is accepted.
+- **Decision:** Build Fraction Line Lab for upper-primary learners.
+- **Reasoning:** It offers a visible learner-driven state change, targeted deterministic feedback, direct curriculum alignment, and low implementation risk without a backend or runtime AI dependency.
+- **Rejected alternatives:** Recall Quest risks becoming a generic quiz and introduces answer-matching ambiguity. Algebra Step Detective adds explanation and animation complexity that is less suitable for the timebox.
+- **Consequences:** The first implementation should cover only one complete fraction-number-line loop with local content. Broader content authoring, accounts, persistence, analytics, voice, and runtime AI are out of scope.
 
 ## Commit and release gate
 

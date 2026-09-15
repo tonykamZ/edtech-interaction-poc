@@ -72,9 +72,9 @@ These concepts were generated from Prompt 001. None has been approved.
 | Implementation risk | Low | Low–medium | Medium |
 | Risk of becoming a generic quiz | Low | High | Medium |
 
-## AI recommendation for human review
+## AI recommendation
 
-Start with **Fraction Line Lab**. It has the clearest visible state change, deterministic feedback, direct curriculum alignment, and a credible no-backend implementation inside the timebox. Prefer tap and keyboard placement over drag-only interaction. This is a proposal, not an accepted product decision.
+Start with **Fraction Line Lab**. It has the clearest visible state change, deterministic feedback, direct curriculum alignment, and a credible no-backend implementation inside the timebox. Prefer tap and keyboard placement over drag-only interaction.
 
 ## Sources
 
@@ -83,6 +83,6 @@ Start with **Fraction Line Lab**. It has the clearest visible state change, dete
 - Henry L. Roediger III and Jeffrey D. Karpicke, ["Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention"](https://doi.org/10.1111/j.1467-9280.2006.01693.x), *Psychological Science* 17(3), 2006.
 - Michelene T. H. Chi et al., ["Self-Explanations: How Students Study and Use Examples in Learning to Solve Problems"](https://doi.org/10.1207/s15516709cog1302_1), *Cognitive Science* 13(2), 1989.
 
-## Human decision gate
+## Human decision
 
-After reviewing the three concepts, the human owner will choose one, record why it was selected, and explain why the other two were rejected in [`decisions.md`](decisions.md). No application implementation begins before that decision.
+The human owner approved Fraction Line Lab on 2026-09-15. The selection and rejected alternatives are recorded as Decision D-004 in [`decisions.md`](decisions.md).

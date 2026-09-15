@@ -20,4 +20,5 @@ Each prompt file should contain:
 
 | ID | Objective | Stage | Status |
 | --- | --- | --- | --- |
-| [001](001-three-bounded-activity-concepts.md) | Generate three bounded learning activities for comparison before selecting a product direction. | Idea exploration | Response recorded; human review pending |
+| [001](001-three-bounded-activity-concepts.md) | Generate three bounded learning activities for comparison before selecting a product direction. | Idea exploration | Completed; Fraction Line Lab selected |
+| [002](002-google-ai-studio-initial-build.md) | Generate the smallest complete Fraction Line Lab vertical slice in Google AI Studio. | Initial implementation | Prompt prepared; not yet run |

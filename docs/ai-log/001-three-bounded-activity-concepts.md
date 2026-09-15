@@ -8,7 +8,7 @@ Generate three small, comparable EdTech activity concepts so the human owner can
 
 - **Date:** 2026-09-15
 - **Stage:** Idea exploration
-- **Status:** Response recorded; human review pending.
+- **Status:** Response recorded; human review completed.
 
 ## Prompt
 
@@ -37,11 +37,11 @@ The AI recommendation is Fraction Line Lab because it makes the learner-driven s
 
 ## Human review
 
-Pending. The human owner needs to assess the three concepts and either accept one, request a revision, or reject all three.
+The human owner approved Fraction Line Lab and requested a concise Google AI Studio prompt for its initial build.
 
 ## Decision or change
 
-No product direction has been accepted. The selected concept and rejected alternatives will be recorded in [`docs/decisions.md`](../decisions.md) after human review.
+Fraction Line Lab was accepted as Decision D-004 in [`docs/decisions.md`](../decisions.md). Recall Quest and Algebra Step Detective were rejected for this timebox.
 
 ## Evidence or verification
 
