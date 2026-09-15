@@ -9,9 +9,9 @@ This repository will serve two purposes:
 
 ## Current status
 
-**Concept selected; initial build prompt prepared. No application has been implemented or verified yet.**
+**Initial vertical slice implemented; awaiting human verification.**
 
-The selected concept is Fraction Line Lab for upper-primary learners. The current milestone is to generate and verify its smallest complete learning loop.
+The selected concept is Fraction Line Lab for upper-primary learners. An initial build was generated via Google AI Studio (Prompt 002) and is available in `src/`. The complete learning loop is present in code, but the acceptance criteria have not yet been verified against observed browser behaviour. See `docs/ai-log/002-google-ai-studio-initial-build.md` for the build record and outstanding verification checklist.
 
 ## Required learning loop
 
@@ -56,4 +56,20 @@ AI may draft and review work, but the human owner chooses the learning activity,
 
 ## Running the app
 
-Not available yet. Setup instructions, environment variables, and the path through one complete interaction will be added after the concept and implementation approach are approved.
+No environment variables or backend are required. The app uses local static data only.
+
+```bash
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000` in a browser. To complete one full interaction:
+
+1. Read the target fraction shown on screen.
+2. Choose how many equal parts the number line needs (partition step).
+3. Select the correct tick mark on the partitioned line (placement step).
+4. Read the specific feedback after each attempt and retry the same item on an error.
+5. Advance through all six fractions (1/2, 1/3, 2/3, 1/4, 3/4, 5/6) to reach the completion summary.
+6. Use the restart button to run the loop again.
+
+Mouse, touch, and keyboard (Tab + Enter/Space) are all supported. No account, login, or network connection is needed.
