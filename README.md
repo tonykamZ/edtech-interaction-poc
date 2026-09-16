@@ -39,6 +39,7 @@ The learner's input must change what happens next. The finished activity must be
 | [`docs/ai-log/`](docs/ai-log/README.md) | Indexed, one-file-per-prompt record of meaningful AI collaboration |
 | [`docs/usability/participant-observation-2026-09-16.md`](docs/usability/participant-observation-2026-09-16.md) | Human-reported usability findings and the implemented correction |
 | [`docs/verification-staged-flow-2026-09-16.md`](docs/verification-staged-flow-2026-09-16.md) | Mobile, keyboard, recovery, transition, and completion evidence for the revised flow |
+| [`docs/demo-screenshot-sequence-2026-09-16.md`](docs/demo-screenshot-sequence-2026-09-16.md) | Ordered desktop storyboard covering the complete flow and distinct feedback cases |
 
 ## Working approach
 
