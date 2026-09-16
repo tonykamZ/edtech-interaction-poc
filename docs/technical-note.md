@@ -53,9 +53,11 @@ The documentation scaffold — `README.md`, `docs/task-brief.md`, `docs/idea-exp
 
 ## 4. One AI suggestion the human rejected, and why
 
-**Suggestion:** During idea exploration, AI proposed Recall Quest, an adaptive ecosystem-vocabulary retrieval activity.
+**Suggestion:** Keep the initial AI-generated interaction as a long page with Step 1 and Step 2 visible together, including the number-line task before the learner had completed the equal-partition task.
 
-**Rejected because:** Free-text answer matching could reject valid synonyms, and the activity risked becoming a generic quiz whose learning value would be difficult to demonstrate in five minutes. Fraction Line Lab provides a more visible state change and deterministic feedback within the timebox. This rejection is recorded in Decision D-004.
+**Rejected because:** Human usability observation showed that inactive information competed with the current action, feedback could appear below the visible area, and the next question could begin at the previous bottom-of-page position. Merely auto-scrolling the same long page was also rejected because it would preserve the extra information and could disorient the learner.
+
+**Human decision:** Use a staged flow: show only Step 1; replace it with Step 2 only after a correct partition; present incorrect, locked, and correct feedback in a blocking dialog within the current viewport; and reset each next-question or restart transition to the top. This preserved the fraction content and deterministic evaluation logic while making the required action clearer. The decision and its verification are recorded in Decision D-008 and Prompt 007.
 
 ---
 

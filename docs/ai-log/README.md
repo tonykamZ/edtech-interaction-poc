@@ -29,3 +29,4 @@ Each prompt file should contain:
 | [007](007-implement-focused-staged-flow.md) | Implement one active step at a time, blocking in-view feedback, visible recovery, and top reset between questions. | Usability revision | Implemented and locally verified |
 | [008](008-final-documentation-cleanup.md) | Reconcile the README, task brief, and technical note with the implemented staged flow and current completion boundary. | Submission packaging | Completed; human confirmation and demo pending |
 | [009](009-desktop-flow-screenshots.md) | Capture an ordered desktop screenshot set covering the full flow and all distinct feedback and recovery cases. | Submission packaging | Completed; human video edit pending |
+| [010](010-align-rejected-flow-rationale.md) | Replace the unrelated rejected-concept example with the documented rejection of the AI-generated simultaneous-step flow. | Submission packaging | Completed; human review pending |
