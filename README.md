@@ -2,6 +2,8 @@
 
 A small, playable learning interaction to be designed and built within an 8–12 hour take-home timebox.
 
+deployed site: https://tonykamz.github.io/edtech-interaction-poc/
+
 This repository will serve two purposes:
 
 1. deliver one runnable EdTech interaction; and
