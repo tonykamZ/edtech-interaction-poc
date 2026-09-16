@@ -9,9 +9,9 @@ This repository will serve two purposes:
 
 ## Current status
 
-**Initial vertical slice implemented and locally verified; informal learner or teacher usability review remains.**
+**Playable staged vertical slice implemented and locally verified. Human confirmation of the latest usability corrections and the final demonstration remain.**
 
-The selected concept is Fraction Line Lab for upper-primary learners. An initial build was generated via Google AI Studio (Prompt 002), then simplified after review so the learner sees age-appropriate guidance and the completion screen reports only observed session results. See `docs/ai-log/002-google-ai-studio-initial-build.md` for the build and verification record.
+The selected concept is Fraction Line Lab for upper-primary learners. An initial build was generated via Google AI Studio ([Prompt 002](docs/ai-log/002-google-ai-studio-initial-build.md)), then simplified after review. Human-reported usability observations identified hidden feedback, unclear lock recovery, stale scroll position, and excessive simultaneous information. The current revision shows one active step at a time, keeps required feedback in the current viewport, and resets each new question to the top. See [Prompt 007](docs/ai-log/007-implement-focused-staged-flow.md) and the [staged-flow verification record](docs/verification-staged-flow-2026-09-16.md).
 
 ## Required learning loop
 
@@ -37,6 +37,8 @@ The learner's input must change what happens next. The finished activity must be
 | [`docs/implementation-plan.md`](docs/implementation-plan.md) | Bounded path from approved concept to verified PoC |
 | [`docs/technical-note.md`](docs/technical-note.md) | One-page technical note: source, what was built, AI use, one rejection, next step |
 | [`docs/ai-log/`](docs/ai-log/README.md) | Indexed, one-file-per-prompt record of meaningful AI collaboration |
+| [`docs/usability/participant-observation-2026-09-16.md`](docs/usability/participant-observation-2026-09-16.md) | Human-reported usability findings and the implemented correction |
+| [`docs/verification-staged-flow-2026-09-16.md`](docs/verification-staged-flow-2026-09-16.md) | Mobile, keyboard, recovery, transition, and completion evidence for the revised flow |
 
 ## Working approach
 
@@ -67,10 +69,14 @@ npm run dev
 Open `http://localhost:3000` in a browser. To complete one full interaction:
 
 1. Read the target fraction shown on screen.
-2. Choose how many equal parts the number line needs (partition step).
-3. Select the correct tick mark on the partitioned line (placement step).
-4. Read the specific feedback after each attempt and retry the same item on an error.
-5. Advance through all six fractions (1/2, 1/3, 2/3, 1/4, 3/4, 5/6) to reach the completion summary.
-6. Use the restart button to run the loop again.
+2. Complete Step 1 by choosing how many equal parts the whole needs. Step 2 is intentionally hidden until this is correct.
+3. Complete Step 2 by selecting the fraction position on the partitioned number line.
+4. Respond to the in-view feedback dialog after each attempt. On an error, use its retry or unlock action to continue the same item.
+5. Use “Next Fraction” after a correct position. The following question starts at its target and Step 1.
+6. Advance through all six fractions (1/2, 1/3, 2/3, 1/4, 3/4, 5/6) to reach the completion summary, then use “Try Again” to restart.
 
 Mouse, touch, and keyboard (Tab + Enter/Space) are all supported. No account, login, or network connection is needed.
+
+## Readiness
+
+The engineering acceptance paths pass locally, including the 375 px staged mobile flow. This remains a timeboxed PoC, not evidence of learning effectiveness or classroom readiness. Before final submission, confirm the revised flow with a learner or teacher and record the required 3–5 minute demonstration.

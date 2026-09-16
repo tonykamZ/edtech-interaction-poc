@@ -73,4 +73,4 @@ These apply only if voice is selected:
 
 ## Current completion boundary
 
-This repository milestone creates the documentation scaffold only. It does not select an activity, choose a technology stack, implement an app, or claim that any product requirement has been satisfied yet.
+The repository now contains the selected Fraction Line Lab activity, its source mapping, a runnable staged interaction, a curated AI and decision trail, usability observations, and local verification evidence. The engineering acceptance paths are complete for the PoC. Remaining submission work is limited to human confirmation of the latest usability corrections, the required 3–5 minute demonstration, final owner acceptance, and any separately authorized commit or release action.
