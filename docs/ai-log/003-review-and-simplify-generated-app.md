@@ -50,5 +50,5 @@ Observed locally on 2026-09-15:
 - [x] Repeated errors show the pause-and-check recovery step
 - [x] All six items can be completed and restarted
 - [x] Partition, tick, and next-item controls work with keyboard activation
-- [ ] Independently observe the layout at 375 px or narrower
+- [x] Independently observe the layout at a 375 px viewport (see Prompt 004)
 - [ ] Conduct informal usability review with an upper-primary learner or teacher

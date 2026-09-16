@@ -60,7 +60,7 @@ Codex reviewed the generated code and browser behaviour. The human owner approve
 - [x] A correct tick enables the next-item or summary action.
 - [x] Completion appears after all six items and restart resets the activity.
 - [x] Keyboard activation advances the partition, tick, and next-item controls.
-- [ ] Independently observe the layout at 375 px or narrower.
+- [x] Independently observe the layout at a 375 px viewport.
 
 The remaining accessibility checks and informal usability review must not be reported as complete until observed.
 
@@ -80,4 +80,5 @@ Local verification completed 2026-09-15:
 - [x] Wrong-tick feedback path
 - [x] Repeated-error pause and unlock
 - [x] Completion summary and restart
+- [x] 375 px mobile-width interaction with no horizontal overflow
 - [ ] Informal upper-primary learner or teacher usability review

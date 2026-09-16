@@ -2,7 +2,7 @@
 
 ## Status
 
-**Vertical slice implemented and locally verified.** The focused review and simplification pass is complete; informal learner or teacher usability review remains before a release recommendation.
+**Vertical slice implemented and locally verified.** The focused review, simplification pass, mobile verification, and proxy usability review are complete. An observed learner or teacher session remains before a release recommendation.
 
 ## Guiding approach
 
@@ -88,6 +88,6 @@ Work should proceed in the smallest reviewable slices that produce evidence for 
 
 ## Current next action
 
-**Phase 5 — Review and verify.** Run a brief informal session with two or three upper-primary learners or teachers. Observe whether they understand the two steps, whether feedback helps a retry, and whether the pause after repeated errors helps or frustrates.
+**Phase 5 — Review and verify.** Use [`docs/usability/participant-session-guide.md`](usability/participant-session-guide.md) for a brief observed session with one upper-primary learner or teacher. Validate or reject the hypotheses in [`docs/usability/proxy-review-2026-09-16.md`](usability/proxy-review-2026-09-16.md) before changing the interaction.
 
 **Phase 6 — Package the submission.** Record those observations, make the human release decision, and capture the 3–5 minute demonstration video.
