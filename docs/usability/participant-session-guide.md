@@ -52,7 +52,7 @@ Observe whether a first-time user understands the two-step fraction task, notice
 
 ## Finding review
 
-For each proxy finding U-01 through U-04, mark one outcome:
+For each proxy finding, mark one outcome:
 
 - **Confirmed:** directly observed behaviour supports the concern.
 - **Contradicted:** observed behaviour clearly opposes the concern.

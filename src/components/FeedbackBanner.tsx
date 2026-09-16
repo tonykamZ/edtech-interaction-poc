@@ -12,6 +12,7 @@ interface FeedbackBannerProps {
   evaluation: CriterionEvaluation | null;
   fraction: FractionItem;
   onNext: () => void;
+  onRetryPartition?: () => void;
   onRetryTick?: () => void;
   onConfirmThinkingCheck?: () => void;
   isLastQuestion: boolean;
@@ -22,6 +23,7 @@ export function FeedbackBanner({
   evaluation,
   fraction,
   onNext,
+  onRetryPartition,
   onRetryTick,
   onConfirmThinkingCheck,
   isLastQuestion,
@@ -109,11 +111,24 @@ export function FeedbackBanner({
             <p className="text-sm text-amber-900 leading-relaxed">{evaluation.feedbackExplanation}</p>
           </div>
         </div>
+        {isDenominatorError && onRetryPartition && !thinkingCheckActive && (
+          <button
+            type="button"
+            onClick={onRetryPartition}
+            id="retry-partition-btn"
+            autoFocus
+            className="shrink-0 self-start sm:self-center inline-flex items-center gap-2 px-4 py-2.5 bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white font-bold text-sm rounded-lg shadow-2xs transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-400 cursor-pointer"
+          >
+            <RotateCcw className="w-4 h-4" aria-hidden="true" />
+            Try another answer
+          </button>
+        )}
         {!isDenominatorError && onRetryTick && !thinkingCheckActive && (
           <button
             type="button"
             onClick={onRetryTick}
             id="retry-tick-btn"
+            autoFocus
             className="shrink-0 self-start sm:self-center inline-flex items-center gap-2 px-4 py-2.5 bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white font-bold text-sm rounded-lg shadow-2xs transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-400 cursor-pointer"
           >
             <RotateCcw className="w-4 h-4" aria-hidden="true" />
@@ -141,6 +156,7 @@ export function FeedbackBanner({
               type="button"
               onClick={onConfirmThinkingCheck}
               id="confirm-thinking-check-btn"
+              autoFocus
               className="inline-flex items-center gap-2 px-3.5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm rounded-md shadow-2xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 cursor-pointer"
             >
               <CheckCircle2 className="w-4 h-4" aria-hidden="true" />

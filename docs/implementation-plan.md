@@ -2,7 +2,7 @@
 
 ## Status
 
-**Vertical slice implemented and locally verified.** The focused review, simplification pass, mobile verification, and proxy usability review are complete. An observed learner or teacher session remains before a release recommendation.
+**Vertical slice revised and locally verified.** The focused review, mobile verification, proxy review, and staged-flow correction are complete. Human confirmation of the revised interaction remains before a release recommendation.
 
 ## Guiding approach
 
@@ -88,6 +88,6 @@ Work should proceed in the smallest reviewable slices that produce evidence for 
 
 ## Current next action
 
-**Phase 5 — Review and verify.** Use [`docs/usability/participant-session-guide.md`](usability/participant-session-guide.md) for a brief observed session with one upper-primary learner or teacher. Validate or reject the hypotheses in [`docs/usability/proxy-review-2026-09-16.md`](usability/proxy-review-2026-09-16.md) before changing the interaction.
+**Phase 5 — Review and verify.** Decision D-008 is implemented and locally verified. Continue the participant session on the revised staged flow to confirm the four reported problems are resolved and evaluate the remaining U-01, U-03, and U-04 hypotheses.
 
 **Phase 6 — Package the submission.** Record those observations, make the human release decision, and capture the 3–5 minute demonstration video.

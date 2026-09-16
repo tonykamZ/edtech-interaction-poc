@@ -78,6 +78,17 @@ Each new decision should include:
 - **Rejected alternative:** Keeping the generated diagnostic dashboard was rejected because it served the reviewer rather than the upper-primary learner and weakened the validity of the interaction.
 - **Consequences:** Research fit remains explicit in the README and technical note. The learner UI is smaller and all completion language is limited to observed session behaviour.
 
+## D-008 — Keep feedback and lock recovery beside the active step
+
+- **Status:** Accepted
+- **Context:** Human-reported usability observations found four connected flow problems: “Try again” feedback required scrolling; a locked answer lacked visible recovery guidance; the next question retained the previous bottom-of-page position; and Step 2 appeared before it was actionable.
+- **Options considered:** Keep the long page and bottom banner; automatically scroll among existing sections; render contextual inline feedback; or show one active step with blocking in-view feedback when an action is required.
+- **Decision:** Show one active step at a time. Replace Step 1 with Step 2 only after a correct partition. Present incorrect-answer, recovery, and correct-position feedback in a modal within the current viewport; make the background inert and focus the required action. Reset scroll to the top and focus the target heading on every next-question and restart transition.
+- **Reasoning:** The learner should see only the information needed for the current action. A blocking modal makes feedback and recovery unavoidable without adding navigation or a new service. Explicit top reset gives every question the same starting context.
+- **Rejected alternatives:** The distant bottom banner is rejected by observed evidence. Automatic scrolling through the original long page is rejected because it preserves inactive information and can disorient the learner. Always-visible Step 2 is rejected because it competes with Step 1 before it can be used.
+- **Consequences:** The page becomes a staged interaction rather than a simultaneous overview. Evaluation logic, fraction content, attempt tracking, and research mapping remain unchanged. Modal focus, background blocking, mobile layout, retry, next-question, keyboard, and completion paths require verification.
+- **Evidence:** [`docs/usability/participant-observation-2026-09-16.md`](usability/participant-observation-2026-09-16.md).
+
 ## Commit and release gate
 
 The current documentation changes must be reviewed by the human owner before any commit. A later commit, if approved, must use the requested `tonykamZ` Git identity. Commit, push, deployment, and release remain separate human-authorized actions.

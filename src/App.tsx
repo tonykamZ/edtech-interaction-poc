@@ -26,6 +26,23 @@ export default function App() {
   const currentFraction = FIXED_FRACTION_SET[currentIndex];
   const isPartitionCorrect = selectedParts === currentFraction?.denominator;
   const isTickCorrect = selectedTick === currentFraction?.numerator;
+  const showFeedbackModal =
+    !isCompleted && evaluation !== null && evaluation.type !== 'partition_matched';
+
+  const resetViewportForQuestion = () => {
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      requestAnimationFrame(() => {
+        document.getElementById('target-fraction-heading')?.focus();
+      });
+    });
+  };
+
+  const focusFirstAvailableAnswer = (selector: string) => {
+    requestAnimationFrame(() => {
+      document.querySelector<HTMLButtonElement>(selector)?.focus();
+    });
+  };
 
   // Handle partition choice (Behavioral Requirement: P = D)
   const handleSelectPartition = (parts: number) => {
@@ -69,6 +86,26 @@ export default function App() {
   // Confirm thinking check reflection to unlock retry
   const handleConfirmThinkingCheck = () => {
     setThinkingCheckActive(false);
+
+    if (evaluation?.category === 'denominator_misunderstanding') {
+      setSelectedParts(null);
+      setSelectedTick(null);
+      setEvaluation(null);
+      focusFirstAvailableAnswer('#partition-selector button:not(:disabled)');
+      return;
+    }
+
+    setSelectedTick(null);
+    setEvaluation(evaluatePartition(currentFraction.denominator, currentFraction));
+    focusFirstAvailableAnswer('#number-line-card button:not(:disabled)');
+  };
+
+  const handleRetryPartition = () => {
+    setSelectedParts(null);
+    setSelectedTick(null);
+    setEvaluation(null);
+    setThinkingCheckActive(false);
+    focusFirstAvailableAnswer('#partition-selector button:not(:disabled)');
   };
 
   // Advance only when both behavioral criteria are met: (P = D) ∧ (k = N)
@@ -101,8 +138,10 @@ export default function App() {
       setTickAttempts([]);
       setRepeatedErrorsThisItem(0);
       setThinkingCheckActive(false);
+      resetViewportForQuestion();
     } else {
       setIsCompleted(true);
+      resetViewportForQuestion();
     }
   };
 
@@ -113,6 +152,7 @@ export default function App() {
     // Reset back to partition matched state
     const result = evaluatePartition(currentFraction.denominator, currentFraction);
     setEvaluation(result);
+    focusFirstAvailableAnswer('#number-line-card button:not(:disabled)');
   };
 
   // Restart the whole lab
@@ -127,12 +167,16 @@ export default function App() {
     setThinkingCheckActive(false);
     setAttemptRecords([]);
     setIsCompleted(false);
+    resetViewportForQuestion();
   };
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900 flex flex-col font-sans">
       {/* Top Navigation Bar */}
-      <header className="bg-white border-b border-slate-200 px-4 sm:px-8 py-4 sticky top-0 z-20 shadow-2xs">
+      <header
+        inert={showFeedbackModal ? true : undefined}
+        className="bg-white border-b border-slate-200 px-4 sm:px-8 py-4 sticky top-0 z-20 shadow-2xs"
+      >
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center shadow-xs">
@@ -178,7 +222,10 @@ export default function App() {
       </header>
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-4xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col justify-start">
+      <main
+        inert={showFeedbackModal ? true : undefined}
+        className="flex-1 max-w-4xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col justify-start"
+      >
         {isCompleted ? (
           <CompletionSummary onRestart={handleRestart} attemptRecords={attemptRecords} />
         ) : (
@@ -196,6 +243,7 @@ export default function App() {
                   </div>
                   <h2
                     id="target-fraction-heading"
+                    tabIndex={-1}
                     className="text-xl sm:text-2xl font-extrabold text-slate-900"
                   >
                     Place <span className="text-indigo-600">{currentFraction.label}</span> on the line
@@ -214,56 +262,76 @@ export default function App() {
               </div>
             </section>
 
-            {/* Step 1: Partition Selector (Denominator Mapping) */}
-            <PartitionSelector
-              currentPartition={selectedParts}
-              targetDenominator={currentFraction.denominator}
-              onSelectPartition={handleSelectPartition}
-              disabled={evaluation?.type === 'tick_matched'}
-              disabledDueToThinkingCheck={thinkingCheckActive}
-            />
-
-            {/* Step 2: Interactive 0-1 Number Line (Numerator Mapping & Failure Highlights) */}
-            <section
-              aria-label="Interactive Number Line"
-              className="w-full flex flex-col gap-2"
-            >
-              <NumberLine
-                partitions={selectedParts}
-                selectedTick={selectedTick}
-                onSelectTick={handleSelectTick}
-                interactive={isPartitionCorrect && evaluation?.type !== 'tick_matched'}
-                targetNumerator={currentFraction.numerator}
+            {!isPartitionCorrect ? (
+              <PartitionSelector
+                currentPartition={selectedParts}
                 targetDenominator={currentFraction.denominator}
-                isEvaluated={
-                  evaluation?.type === 'tick_undercount' ||
-                  evaluation?.type === 'tick_overcount' ||
-                  evaluation?.type === 'tick_zero' ||
-                  evaluation?.type === 'tick_whole' ||
-                  evaluation?.type === 'tick_matched'
-                }
-                isCorrect={isTickCorrect}
-                isPartitionCorrect={isPartitionCorrect}
+                onSelectPartition={handleSelectPartition}
                 disabledDueToThinkingCheck={thinkingCheckActive}
               />
-            </section>
+            ) : (
+              <section
+                aria-label="Interactive Number Line"
+                className="w-full flex flex-col gap-2"
+              >
+                <NumberLine
+                  partitions={selectedParts}
+                  selectedTick={selectedTick}
+                  onSelectTick={handleSelectTick}
+                  interactive={evaluation?.type !== 'tick_matched'}
+                  targetNumerator={currentFraction.numerator}
+                  targetDenominator={currentFraction.denominator}
+                  isEvaluated={
+                    evaluation?.type === 'tick_undercount' ||
+                    evaluation?.type === 'tick_overcount' ||
+                    evaluation?.type === 'tick_zero' ||
+                    evaluation?.type === 'tick_whole' ||
+                    evaluation?.type === 'tick_matched'
+                  }
+                  isCorrect={isTickCorrect}
+                  isPartitionCorrect={isPartitionCorrect}
+                  disabledDueToThinkingCheck={thinkingCheckActive}
+                />
+              </section>
+            )}
+          </div>
+        )}
+      </main>
 
-            {/* Feedback & Failure Criterion Guidance Banner */}
+      {showFeedbackModal && (
+        <div
+          className="fixed inset-0 z-50 bg-slate-950/55 backdrop-blur-xs p-4 flex items-center justify-center"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Answer feedback"
+          onKeyDown={(event) => {
+            if (event.key === 'Tab') {
+              event.preventDefault();
+              const action = event.currentTarget.querySelector('button:not(:disabled)');
+              if (action instanceof HTMLButtonElement) action.focus();
+            }
+          }}
+        >
+          <div className="w-full max-w-lg max-h-[calc(100vh-2rem)] overflow-y-auto rounded-2xl shadow-2xl">
             <FeedbackBanner
               evaluation={evaluation}
               fraction={currentFraction}
               onNext={handleNext}
+              onRetryPartition={handleRetryPartition}
               onRetryTick={handleRetryTick}
               onConfirmThinkingCheck={handleConfirmThinkingCheck}
               isLastQuestion={currentIndex === FIXED_FRACTION_SET.length - 1}
               thinkingCheckActive={thinkingCheckActive}
             />
           </div>
-        )}
-      </main>
+        </div>
+      )}
 
       {/* Clean Footer */}
-      <footer className="py-4 text-center text-xs text-slate-500 border-t border-slate-200 bg-white">
+      <footer
+        inert={showFeedbackModal ? true : undefined}
+        className="py-4 text-center text-xs text-slate-500 border-t border-slate-200 bg-white"
+      >
         <p>Fraction Line Lab • Practice placing fractions from 0 to 1</p>
       </footer>
     </div>
